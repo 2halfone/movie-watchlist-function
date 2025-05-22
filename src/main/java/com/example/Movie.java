@@ -1,27 +1,28 @@
 package com.example;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import java.util.UUID;
 
 @Entity
-@Table(name = "movies")
 public class Movie {
+
     @Id
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     private String title;
     private boolean watched;
 
-    // Costruttore di default
-    public Movie() {}
+    public Movie() {
+    }
 
-    // Getters e setters
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
