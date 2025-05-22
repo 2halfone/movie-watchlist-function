@@ -22,6 +22,14 @@
         <spring.cloud.function.version>4.1.1</spring.cloud.function.version>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>spring-releases</id>
+            <name>Spring Releases</name>
+            <url>https://repo.spring.io/release</url>
+        </repository>
+    </repositories>
+
     <dependencies>
         <!-- Spring Boot Starters (versioni ereditate dal parent) -->
         <dependency>
@@ -51,10 +59,20 @@
         </dependency>
 
         <!-- Spring Cloud Function for GCP -->
+        <!-- 1) Rimuovi la vecchia dipendenza -->
+        <!--
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-function-starter</artifactId>
-            <version>4.0.2</version> <!-- o la versione più recente compatibile con Spring Boot 3.4.x -->
+            <version>4.0.2</version>
+        </dependency>
+        -->
+        
+        <!-- 2) Aggiungi invece lo starter WebFlux (include FunctionCatalog) -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-function-webflux</artifactId>
+            <version>4.2.2</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
