@@ -53,6 +53,11 @@
         <!-- Spring Cloud Function for GCP -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-function-starter</artifactId>
+            <version>4.0.2</version> <!-- o la versione più recente compatibile con Spring Boot 3.4.x -->
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-function-context</artifactId>
             <version>${spring.cloud.function.version}</version>
         </dependency>
