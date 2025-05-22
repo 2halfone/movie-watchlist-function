@@ -11,6 +11,19 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
+    <dependencyManagement>
+        <dependencies>
+            <!-- Spring Cloud 2024.0.0 per compatibilità con Spring Boot 3.4.x -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>2024.0.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <groupId>com.example</groupId>
     <artifactId>movie-watchlist-function</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -72,22 +85,22 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-function-webflux</artifactId>
-            <version>4.2.2</version>
+            <!-- versione rimossa: la prende dal BOM -->
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-function-context</artifactId>
-            <version>${spring.cloud.function.version}</version>
+            <!-- versione rimossa: la prende dal BOM -->
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-function-adapter-gcp</artifactId>
-            <version>${spring.cloud.function.version}</version>
+            <!-- versione rimossa: la prende dal BOM -->
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-function-web</artifactId>
-            <version>${spring.cloud.function.version}</version>
+            <!-- versione rimossa: la prende dal BOM -->
         </dependency>
 
         <!-- Test -->
